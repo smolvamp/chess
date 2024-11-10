@@ -30,4 +30,5 @@ To run the desktop version, ensure you have the following installed:
 1. Clone or download the repository.
    ```bash
    git clone https://github.com/smolvamp/chess-desktop.git
-   java -jar chess-desktop/out/artifacts/chess_jar/chess.jar
+   
+   java -jar chess-desktop/chess.jar
