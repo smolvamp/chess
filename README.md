@@ -29,6 +29,6 @@ To run the desktop version, ensure you have the following installed:
 ### Running the Game
 1. Clone or download the repository.
    ```bash
-   git clone https://github.com/smolvamp/chess-desktop.git
+   git clone https://github.com/smolvamp/chess.git
    
-   java -jar chess-desktop/chess.jar
+   java -jar chess/chess.jar
