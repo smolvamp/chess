@@ -1,7 +1,6 @@
 package main;
 
 import pieces.*;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
@@ -10,6 +9,8 @@ import java.util.stream.Collectors;
 
 
 public class Board extends JPanel {
+
+  //  public String fenStartingPosition = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
     public int tileSize= 85;
 
@@ -49,7 +50,7 @@ public class Board extends JPanel {
         return null;
     }
 
-    public void makeMove(Move move) {
+    public void makeMove(Move move) throws IOException, InterruptedException {
 
         if (move.pieces.name.equals("Pawn")) {
 
@@ -191,6 +192,76 @@ public class Board extends JPanel {
 
 
     public void addPieces() {
+
+//        pieceList.clear();
+//        String[] parts = fenString.split(" ");
+//
+//        String position = parts[0];
+//        int row = 0;
+//        int col = 0;
+//        for(int i = 0; i< position.length(); i++){
+//            char ch = position.charAt(i);
+//            if (ch == '/'){
+//                row++;
+//                col = 0;
+//            }
+//            else if (Character.isDigit(ch)){
+//                col += Character.getNumericValue(ch);
+//
+//            }
+//            else{
+//                boolean isWhite = Character.isUpperCase(ch);
+//                char pieceChar  = Character.toLowerCase(ch);
+//
+//                switch (pieceChar){
+//                    case 'r':
+//                        pieceList.add(new Rook(this, col, row, isWhite));
+//                        break;
+//                    case 'n':
+//                        pieceList.add(new Knight(this, col, row, isWhite));
+//                        break;
+//                    case 'b':
+//                        pieceList.add(new Bishop(this, col, row, isWhite));
+//                        break;
+//                    case 'q':
+//                        pieceList.add(new Queen(this, col, row, isWhite));
+//                        break;
+//                    case 'k':
+//                        pieceList.add(new King(this, col, row, isWhite));
+//                        break;
+//                    case 'p':
+//                        pieceList.add(new Pawn(this, col, row, isWhite));
+//                        break;
+//                }
+//                col++;
+//            }
+//        }
+//        isWhiteToMove = parts[1].equals("w");
+//
+//        Pieces bqr = getPieces(0,0);
+//        if (bqr instanceof Rook){
+//            bqr.isFirstMove = parts[2].contains("q");
+//        }
+//        Pieces bkr = getPieces(7,0);
+//        if (bkr instanceof Rook){
+//            bkr.isFirstMove = parts[2].contains("k");
+//        }
+//        Pieces wqr = getPieces(0,7);
+//        if (wqr instanceof Rook){
+//            wqr.isFirstMove = parts[2].contains("Q");
+//        }
+//        Pieces wkr = getPieces(7,7);
+//        if (wkr instanceof Rook){
+//            wkr.isFirstMove = parts[2].contains("Q");
+//        }
+//
+//        if (parts[3].equals("-")){
+//            enPassantTile = -1;
+//        }
+//        else{
+//             enPassantTile = (7 - (parts[3].charAt(1)-'1')) * 8 + (parts[3].charAt(0) - 'a');
+//        }
+
         pieceList.add(new Rook(this, 0, 0, false));
         pieceList.add(new Knight(this, 1, 0, false));
         pieceList.add(new Bishop(this, 2, 0, false));
@@ -229,7 +300,6 @@ public class Board extends JPanel {
 
     }
 
- 
     private void updateGameState() throws IOException, InterruptedException {
         Pieces king = findKing(isWhiteToMove);
 

@@ -4,6 +4,7 @@ import pieces.Pieces;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class Input extends MouseAdapter {
 
@@ -39,7 +40,13 @@ public class Input extends MouseAdapter {
             Move move = new Move(board,board.selectedPiece,col,row);
 
             if (board.isValidMove(move)){
-                board.makeMove(move);
+                try {
+                    board.makeMove(move);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
             else{
                 board.selectedPiece.xPos = board.selectedPiece.col * board.tileSize;

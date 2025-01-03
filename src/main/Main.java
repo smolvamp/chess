@@ -14,7 +14,10 @@ public class Main
         frame.getContentPane().setBackground(new Color(0, 0, 0));
         frame.setLocationRelativeTo(null);
 
+
         Board board= new Board();
+       // frame.add(label);
+    
         frame.add(board);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

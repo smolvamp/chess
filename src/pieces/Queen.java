@@ -16,7 +16,6 @@ public class Queen extends Pieces{
         this.yPos = row * board.tileSize;
 
 
-
         this.isWhite = isWhite;
         this.name = "Queen";
 
