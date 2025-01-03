@@ -4,6 +4,7 @@ import pieces.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -228,21 +229,41 @@ public class Board extends JPanel {
 
     }
 
-    private void updateGameState(){
+ 
+    private void updateGameState() throws IOException, InterruptedException {
         Pieces king = findKing(isWhiteToMove);
 
         if(checkScanner.isGameOver(king)){
+
             if (checkScanner.isKingChecked(new Move(this, king, king.col, king.row))){
-                System.out.println(isWhiteToMove ? "Black won!!": "White WIns!!");
+
+                if (isWhiteToMove){
+                    new gameOver("Black won!");
+//                    JFrame frame = new JFrame("GAME OVER!!!");
+//
+//                    // Set default behavior on close
+//                    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//                    frame.setSize(500, 400);
+//
+//                    // Show an Information dialog (pop-up)
+//                    String result = "Black won";
+//                    JOptionPane.showMessageDialog(frame, result,
+//                            "GAME OVER!!!", JOptionPane.INFORMATION_MESSAGE);
+
+                }
+                else
+                {
+                    new gameOver("White won!");
+                }
 
             }
             else{
-                System.out.println("Stalemate!!!");
+                new gameOver("Stalemate!");
             }
         isGameOver = true;
         }
           else if (inSufficientMaterial(true) && inSufficientMaterial(false)) {
-            System.out.println("Insufficient Material!");
+            new gameOver("Insufficient Material!");
 
             isGameOver = true;
         }
