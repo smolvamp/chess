@@ -50,9 +50,13 @@ To run the desktop version, ensure you have the following installed:
 We welcome contributions! If you'd like to improve the game, fix bugs, or add features, follow these steps:
 
    Fork the repository.
+   
    Clone your fork to your local machine.
+   
    Make your changes.
+   
    Commit your changes and push to your fork.
+   
    Open a pull request to the main repository.
 
 ## License
