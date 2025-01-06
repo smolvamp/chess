@@ -5,10 +5,16 @@ This is a chess game developed using Java, currently available as a desktop vers
 ## Features
 
 ### Current Features:
-- **Offline PvP**: Play against another player locally on the same device.
-- **Classic Chess Rules**: All standard chess rules are followed.
-- **User Interface**: Simple and intuitive interface for easy gameplay.
-- **Chess Board**: Drag and drop pieces for easy movement.
+- **Offline PvP**: Play locally against another player on the same device, with no need for an internet connection.
+- **Classic Chess Rules**: The game follows the official rules of chess, including special moves like castling, en passant, and pawn promotion.
+- **User Interface**: A clean, minimalistic, and easy-to-use interface for smooth gameplay. It includes a simple chessboard and clearly labeled pieces.
+- **Drag and Drop Pieces**: Move your chess pieces effortlessly with the drag-and-drop functionality.
+- **Piece Movement Validations**: Ensures that each move follows the rules of chess (such as only moving within the piece's allowed pattern).
+
+### Planned Features:
+- **Single Player Mode**: Play against an AI opponent.
+- **Online PvP**: Connect with other players over the internet.
+- **Move History**: Keep track of your moves during the game.
 
 ## Getting Started
 
@@ -51,4 +57,4 @@ We welcome contributions! If you'd like to improve the game, fix bugs, or add fe
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE file](https://github.com/smolvamp/chess/blob/main/LICENSE) for details.
